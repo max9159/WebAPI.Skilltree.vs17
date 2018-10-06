@@ -17,6 +17,13 @@ namespace WebAPI.Skilltree.vs17.Controllers
     {
         private Northwind db = new Northwind();
 
+        [HttpGet]
+        [Route("login")]
+        public HttpResponseMessage Auth()
+        {
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Unauthorized, "Unauthorized");
+            return response;
+        }
         // GET: api/Products1
         public IQueryable<Product> GetProducts()
         {
