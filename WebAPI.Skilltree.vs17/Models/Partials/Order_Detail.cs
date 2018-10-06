@@ -1,4 +1,4 @@
-namespace WebAPI.Skilltree.vs17.Models.Partials
+namespace WebAPI.Skilltree.vs17.Models
 {
     using System;
     using System.Collections.Generic;
