@@ -19,6 +19,16 @@ namespace WebAPI.Clean.Controllers
     {
         private Context db = new Context();
 
+        [Route("date/{pubdate:datetime}")]
+        public IHttpActionResult Get(DateTime pubdate)
+        {
+            var books = db.Books.Include(b => b.Author)
+                .Where(b => DbFunctions.TruncateTime(b.PublishDate)
+                         == DbFunctions.TruncateTime(pubdate));
+
+            return Ok(books);
+        }
+
         [Route("~/authors/{authorId:int}/books")]
         public IHttpActionResult GetBooksByAuthor(int authorId)
         {
