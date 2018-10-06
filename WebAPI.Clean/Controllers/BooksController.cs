@@ -14,17 +14,20 @@ using WebAPI.Clean.Models.BookStore;
 
 namespace WebAPI.Clean.Controllers
 {
+    [RoutePrefix("books")]
     public class BooksController : ApiController
     {
         private Context db = new Context();
 
         // GET: api/Books
+        [Route("")]
         public IQueryable<Book> GetBooks()
         {
             return db.Books;
         }
 
         // GET: api/Books/5
+        [Route("{id:int}")]
         [ResponseType(typeof(Book))]
         public async Task<IHttpActionResult> GetBook(int id)
         {
