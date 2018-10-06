@@ -19,6 +19,14 @@ namespace WebAPI.Clean.Controllers
     {
         private Context db = new Context();
 
+        [Route("~/authors/{authorId:int}/books")]
+        public IHttpActionResult GetBooksByAuthor(int authorId)
+        {
+            var author = db.Books.Include(b => b.Author)
+                .Where(b => b.AuthorId == authorId);
+
+            return Ok(author);
+        }
 
         [Route("{genre}")]
         public IHttpActionResult GetBookByGenre(string genre)
