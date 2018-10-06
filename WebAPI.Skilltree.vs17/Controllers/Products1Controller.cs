@@ -71,6 +71,48 @@ namespace WebAPI.Skilltree.vs17.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        // PATCH: api/Products1/5
+        [ResponseType(typeof(void))]
+        public async Task<IHttpActionResult> PatchProduct(int id, Product patchData)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != patchData.ProductID)
+            {
+                return BadRequest();
+            }
+            Product product = await db.Products.FindAsync(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            // 異動 Product 物件部分欄位
+            product.ProductName = patchData.ProductName;
+
+            db.Entry(product).State = EntityState.Modified;
+
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ProductExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
         // POST: api/Products1
         [ResponseType(typeof(Product))]
         public async Task<IHttpActionResult> PostProduct(Product product)
