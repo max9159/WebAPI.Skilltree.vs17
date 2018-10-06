@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI.Skilltree.vs17", "WebAPI.Skilltree.vs17\WebAPI.Skilltree.vs17.csproj", "{0E7EE8F4-AFD8-44EC-BA96-8FB85D19E0DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI.Clean", "WebAPI.Clean\WebAPI.Clean.csproj", "{C953C46B-45E0-4B75-8606-6A169E83E959}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0E7EE8F4-AFD8-44EC-BA96-8FB85D19E0DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E7EE8F4-AFD8-44EC-BA96-8FB85D19E0DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E7EE8F4-AFD8-44EC-BA96-8FB85D19E0DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C953C46B-45E0-4B75-8606-6A169E83E959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C953C46B-45E0-4B75-8606-6A169E83E959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C953C46B-45E0-4B75-8606-6A169E83E959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C953C46B-45E0-4B75-8606-6A169E83E959}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
