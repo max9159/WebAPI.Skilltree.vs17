@@ -10,6 +10,9 @@ namespace MVC.Controllers
     {
         public ActionResult Index()
         {
+            var calc = new localhost.WebService1();
+            var result = calc.Add(8, 7);
+            ViewBag.result = result;
             return View();
         }
 
