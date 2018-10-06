@@ -19,14 +19,24 @@ namespace WebAPI.Clean.Controllers
     {
         private Context db = new Context();
 
-        // GET: api/Books
+
+        [Route("{genre}")]
+        public IHttpActionResult GetBookByGenre(string genre)
+        {
+            var books = db.Books.Include(b => b.Author)
+                .Where(b => b.Genre.Equals(genre, StringComparison.OrdinalIgnoreCase));
+
+            return Ok(books);
+        }
+
+        // GET: Books
         [Route("")]
         public IQueryable<Book> GetBooks()
         {
             return db.Books;
         }
 
-        // GET: api/Books/5
+        // GET: Books/5
         [Route("{id:int}")]
         [ResponseType(typeof(Book))]
         public async Task<IHttpActionResult> GetBook(int id)
