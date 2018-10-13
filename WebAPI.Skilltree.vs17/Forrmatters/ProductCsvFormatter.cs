@@ -12,7 +12,7 @@ namespace WebAPI.Skilltree.vs17.Forrmatters
 {
     public class ProductCsvFormatter : BufferedMediaTypeFormatter
     {
-        ProductCsvFormatter()
+        public ProductCsvFormatter()
         {
             // 加入 "text/csv" 到支援清單
             SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/csv"));
