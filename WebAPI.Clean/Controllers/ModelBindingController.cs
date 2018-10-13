@@ -51,11 +51,18 @@ namespace WebAPI.Clean.Controllers
 
         [HttpPost]
         [Route("MultiCustomer")]
-        public string MultiCustomer(Customer customer1, Customer customer2)
+        public string MultiCustomer(CustomerS CustomerS)
         {
-            return $"{customer1.ToString()}, {customer2.ToString()}";
+            return $"{CustomerS.cus1.ToString()}, {CustomerS.cus2.ToString()}";
         }
     }
+    public class CustomerS
+    {
+        public Customer cus1{ get; set; }
+        public Customer cus2 { get; set; }
+
+    }
+
 
     public class Customer
     {
