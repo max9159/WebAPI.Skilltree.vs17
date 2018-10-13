@@ -194,6 +194,7 @@
     <Compile Include="Controllers\Products1Controller.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Filters\ModelValidationFilterAttribute.cs" />
     <Compile Include="Forrmatters\ProductCsvFormatter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
