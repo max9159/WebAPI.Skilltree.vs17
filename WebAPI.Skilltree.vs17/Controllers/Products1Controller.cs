@@ -16,7 +16,18 @@ namespace WebAPI.Skilltree.vs17.Controllers
     public class Products1Controller : ApiController
     {
         private Northwind db = new Northwind();
+        [HttpGet]
+        [Route("MIME")]
+        public HttpResponseMessage MIMETest()
+        {
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, "ok");
+            response.Content = new StringContent("res string test");
+            response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+            //response.Content = new ByteArrayContent(imgdata);
+            //response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
 
+            return response;
+        }
         [HttpGet]
         [Route("login")]
         public HttpResponseMessage Auth()
