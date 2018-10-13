@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Web;
 using WebAPI.Skilltree.vs17.Models;
 
@@ -16,9 +17,16 @@ namespace WebAPI.Skilltree.vs17.Forrmatters
         {
             // 加入 "text/csv" 到支援清單
             SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/csv"));
+            SupportedEncodings.Add(new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
+            SupportedEncodings.Add(Encoding.GetEncoding("iso-8859-1"));
         }
 
         public override bool CanReadType(Type type)
+        {
+            return false;
+        }
+
+        public override bool CanWriteType(Type type)
         {
             if (type == typeof(Product))
             {
@@ -31,13 +39,9 @@ namespace WebAPI.Skilltree.vs17.Forrmatters
             }
         }
 
-        public override bool CanWriteType(Type type)
-        {
-            return false;
-        }
-
         public override void WriteToStream(Type type, object value, Stream writeStream, HttpContent content)
         {
+            Encoding effectiveEncoding = SelectCharacterEncoding(content.Headers);
             using (var writer = new StreamWriter(writeStream))
             {
                 // 集合
