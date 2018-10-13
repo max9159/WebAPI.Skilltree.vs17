@@ -2,6 +2,8 @@ using System.Web.Http;
 using WebActivatorEx;
 using WebAPI.Skilltree.vs17;
 using Swashbuckle.Application;
+using System;
+using System.Xml.XPath;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -101,7 +103,7 @@ namespace WebAPI.Skilltree.vs17
                         // those comments into the generated docs and UI. You can enable this by providing the path to one or
                         // more Xml comment files.
                         //
-                        //c.IncludeXmlComments(GetXmlCommentsPath());
+                        c.IncludeXmlComments(GetXmlCommentsPath());
 
                         // Swashbuckle makes a best attempt at generating Swagger compliant JSON schemas for the various types
                         // exposed in your API. However, there may be occasions when more control of the output is needed.
@@ -250,6 +252,11 @@ namespace WebAPI.Skilltree.vs17
                         //
                         //c.EnableApiKeySupport("apiKey", "header");
                     });
+        }
+
+        private static string GetXmlCommentsPath()
+        {
+            return string.Format(@"{0}\App_Data\WebAPI.Skilltree.vs17.XML", System.AppDomain.CurrentDomain.BaseDirectory);
         }
     }
 }
