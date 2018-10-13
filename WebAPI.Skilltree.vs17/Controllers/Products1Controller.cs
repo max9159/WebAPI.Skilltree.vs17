@@ -16,8 +16,15 @@ using WebAPI.Skilltree.vs17.Models;
 /// </summary>
 namespace WebAPI.Skilltree.vs17.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
     public class Products1Controller : ApiController
     {
+        /// <summary>
+        /// The database
+        /// </summary>
         private Northwind db = new Northwind();
 
 
