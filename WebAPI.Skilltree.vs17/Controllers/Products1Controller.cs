@@ -11,11 +11,20 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using WebAPI.Skilltree.vs17.Models;
 
+/// <summary>
+/// 
+/// </summary>
 namespace WebAPI.Skilltree.vs17.Controllers
 {
     public class Products1Controller : ApiController
     {
         private Northwind db = new Northwind();
+
+
+        /// <summary>
+        /// MIMEs the test.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("MIME")]
         public HttpResponseMessage MIMETest()
@@ -28,6 +37,10 @@ namespace WebAPI.Skilltree.vs17.Controllers
 
             return response;
         }
+        /// <summary>
+        /// Authentications this instance.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("login")]
         public HttpResponseMessage Auth()
@@ -36,12 +49,21 @@ namespace WebAPI.Skilltree.vs17.Controllers
             return response;
         }
         // GET: api/Products1
+        /// <summary>
+        /// Gets the products.
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<Product> GetProducts()
         {
             return db.Products;
         }
 
         // GET: api/Products1/5
+        /// <summary>
+        /// Gets the product.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         [ResponseType(typeof(Product))]
         public async Task<IHttpActionResult> GetProduct(int id)
         {
@@ -55,6 +77,12 @@ namespace WebAPI.Skilltree.vs17.Controllers
         }
 
         // PUT: api/Products1/5
+        /// <summary>
+        /// Puts the product.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="product">The product.</param>
+        /// <returns></returns>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutProduct(int id, Product product)
         {
@@ -90,6 +118,12 @@ namespace WebAPI.Skilltree.vs17.Controllers
         }
 
         // PATCH: api/Products1/5
+        /// <summary>
+        /// Patches the product.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="patchData">The patch data.</param>
+        /// <returns></returns>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PatchProduct(int id, Product patchData)
         {
@@ -132,6 +166,11 @@ namespace WebAPI.Skilltree.vs17.Controllers
         }
 
         // POST: api/Products1
+        /// <summary>
+        /// Posts the product.
+        /// </summary>
+        /// <param name="product">The product.</param>
+        /// <returns></returns>
         [ResponseType(typeof(Product))]
         public async Task<IHttpActionResult> PostProduct(Product product)
         {
@@ -147,6 +186,11 @@ namespace WebAPI.Skilltree.vs17.Controllers
         }
 
         // DELETE: api/Products1/5
+        /// <summary>
+        /// Deletes the product.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         [ResponseType(typeof(Product))]
         public async Task<IHttpActionResult> DeleteProduct(int id)
         {
@@ -162,6 +206,10 @@ namespace WebAPI.Skilltree.vs17.Controllers
             return Ok(product);
         }
 
+        /// <summary>
+        /// Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
+        /// </summary>
+        /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -171,6 +219,11 @@ namespace WebAPI.Skilltree.vs17.Controllers
             base.Dispose(disposing);
         }
 
+        /// <summary>
+        /// Products the exists.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         private bool ProductExists(int id)
         {
             return db.Products.Count(e => e.ProductID == id) > 0;
