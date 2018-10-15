@@ -538,6 +538,8 @@
             Posts the product.
             </summary>
             <param name="product">The product.</param>
+            <response code="201">新增產品</response>
+            <response code="400">新增錯誤</response>
             <returns></returns>
         </member>
         <member name="M:WebAPI.Skilltree.vs17.Controllers.Products1Controller.DeleteProduct(System.Int32)">

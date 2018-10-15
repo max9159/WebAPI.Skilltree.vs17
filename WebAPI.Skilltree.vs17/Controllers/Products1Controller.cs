@@ -177,6 +177,8 @@ namespace WebAPI.Skilltree.vs17.Controllers
         /// Posts the product.
         /// </summary>
         /// <param name="product">The product.</param>
+        /// <response code="201">新增產品</response>
+        /// <response code="400">新增錯誤</response>
         /// <returns></returns>
         [ResponseType(typeof(Product))]
         public async Task<IHttpActionResult> PostProduct(Product product)
