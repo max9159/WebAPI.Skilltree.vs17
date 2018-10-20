@@ -27,6 +27,13 @@ namespace WebAPI.Skilltree.vs17
 				routeTemplate: "api/{controller}/{id}",
 				defaults: new { id = RouteParameter.Optional }
 			);
-		}
+
+            //404 Elmah sequece put on below 
+            config.Routes.MapHttpRoute(
+                 name: "NotFound",
+                 routeTemplate: "{*path}",
+                 defaults: new { controller = "Elmah404", action = "NotFound" }
+            );
+        }
 	}
 }
