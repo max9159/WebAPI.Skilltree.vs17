@@ -481,6 +481,48 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:WebAPI.Skilltree.vs17.Controllers.BoomController">
+            <summary>
+            Try Exception Handling
+            </summary>
+            <seealso cref="T:System.Web.Http.ApiController" />
+        </member>
+        <member name="M:WebAPI.Skilltree.vs17.Controllers.BoomController.Demo0(System.Int32)">
+            <summary>
+            Exception
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">From: throw new Exception</exception>
+        </member>
+        <member name="M:WebAPI.Skilltree.vs17.Controllers.BoomController.Demo1">
+            <summary>
+            HttpResponseMessage
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Web.Http.HttpResponseException"></exception>
+        </member>
+        <member name="M:WebAPI.Skilltree.vs17.Controllers.BoomController.Demo2">
+            <summary>
+            HttpResponseMessage
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Skilltree.vs17.Controllers.BoomController.Demo3(System.Int32)">
+            <summary>
+            Demo3s the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Skilltree.vs17.Controllers.BoomController.Demo4(System.Int32)">
+            <summary>
+            Demo4s the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+            <exception cref="T:System.Web.Http.HttpResponseException"></exception>
+        </member>
         <member name="T:WebAPI.Skilltree.vs17.Controllers.Products1Controller">
             <summary>
             

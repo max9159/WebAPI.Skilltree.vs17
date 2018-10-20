@@ -14,6 +14,7 @@ namespace WebAPI.Skilltree.vs17.Controllers
     /// <seealso cref="System.Web.Http.ApiController" />
     public class BoomController : ApiController
     {
+        //public int testException = Convert.ToInt16("Trigger exception");
         /// <summary>
         /// Exception
         /// </summary>
@@ -98,5 +99,14 @@ namespace WebAPI.Skilltree.vs17.Controllers
             var customer = new Customer() { FirstName = "Bruce", LastName = "Chen" };
             return customer;
         }
+    }
+    public class Customer
+    {
+        public Customer()
+        {
+        }
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }
