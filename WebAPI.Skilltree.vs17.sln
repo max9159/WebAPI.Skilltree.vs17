@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculators", "Calculators\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorsTests", "CalculatorsTests\CalculatorsTests.csproj", "{B7514D0E-EE6A-419A-8289-0492A23D9C05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI.Skilltree.vs17Tests", "WebAPI.Skilltree.vs17Tests\WebAPI.Skilltree.vs17Tests.csproj", "{DDB56546-663D-4674-B1FD-56020B9B8C4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B7514D0E-EE6A-419A-8289-0492A23D9C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7514D0E-EE6A-419A-8289-0492A23D9C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7514D0E-EE6A-419A-8289-0492A23D9C05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDB56546-663D-4674-B1FD-56020B9B8C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDB56546-663D-4674-B1FD-56020B9B8C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDB56546-663D-4674-B1FD-56020B9B8C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDB56546-663D-4674-B1FD-56020B9B8C4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
