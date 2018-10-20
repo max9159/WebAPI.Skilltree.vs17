@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Filters;
 
 namespace WebAPI.Skilltree.vs17.Controllers
 {
@@ -20,6 +21,18 @@ namespace WebAPI.Skilltree.vs17.Controllers
                 throw new Exception("From: throw new Exception");
             }
             return id;
+        }
+    }
+
+    public class ElmahErrorAttribute : ExceptionFilterAttribute
+    {
+        public override void OnException(HttpActionExecutedContext actionExecutedContext)
+        {
+            if (actionExecutedContext.Exception != null)
+                Elmah.ErrorSignal
+                       .FromCurrentContext()
+                       .Raise(actionExecutedContext.Exception);
+            base.OnException(actionExecutedContext);
         }
     }
 }
